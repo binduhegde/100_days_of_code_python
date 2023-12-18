@@ -15,14 +15,16 @@ def get_random_card():
     options = [11,2,3,4,5,6,7,8,9,10,10,10,10]
     return random.choice(options)
 
-# randomly keeps adding numbers to the computer's cards until the sum is no longer less than 17. it's a rule
+# randomly keeps adding numbers to the computer's cards 
+# until the sum is no longer less than 17. it's a rule
 def get_computers_cards():
     cards = []
     while sum(cards) < 17:
         cards.append(get_random_card())
     return cards
 
-# returns a boolean value. True if the player wants to get another card and False otherwise
+# returns a boolean value. True if the player wants to 
+# get another card and False otherwise
 def get_another_card():
     while True:
         inp = input("Type 'yes' to get another card, type 'no' to pass: ").lower()
@@ -45,7 +47,7 @@ def get_winner(user_score, comp_score):
         return "It's a draw 😐" 
     else:
         return "You lose 😭"
-    
+
 def play_game():
     user_cards = get_starting_user_cards()
     computer_cards = get_computers_cards()
