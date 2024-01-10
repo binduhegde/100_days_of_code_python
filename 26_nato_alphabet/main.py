@@ -8,6 +8,11 @@ df = pd.read_csv('nato_phonetic_alphabet.csv')
 
 data_dict = {row.letter:row.code for index, row in df.iterrows()}
 
-user_inp = input("Enter a word: ").upper()
-result = [data_dict[i] for i in user_inp]
+while True:
+    user_inp = input("Enter a word: ").upper()
+    try:
+        result = [data_dict[i] for i in user_inp]
+        break
+    except KeyError:
+        print("Please enter letters only")
 print(result)
